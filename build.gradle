@@ -116,6 +116,9 @@ repositories {
 		name = "appleCore"
 		url = "http://www.ryanliptak.com/maven/"
 	}
+	maven {
+		url "https://cursemaven.com"
+	}
 }
 
 sourceSets {
@@ -158,7 +161,7 @@ dependencies {
 //	compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
 //		setChanging(true)
 //	}
-	implementation 'com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT'
+	compile "com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT"
 	compile ("com.github.GTNewHorizons:StructureLib:${config.structurelib.version}:deobf")
 
 	provided "net.industrial-craft:industrialcraft-2:${config.ic2.version}:dev"  
@@ -180,10 +183,10 @@ dependencies {
 
 	// Forestry .jar from repository is obfuscated and won't compile, so use local unobfuscated one.
 	//compileOnly "net.sengir.forestry:forestry_1.7.10:4.4.0.0:dev"
-	implementation 'com.github.GTNewHorizons:ForestryMC:master-SNAPSHOT'
+	compile "com.github.GTNewHorizons:ForestryMC:master-SNAPSHOT"
 
 	compileOnly "mods.railcraft:Railcraft_1.7.10:9.12.3.0:dev"
-	implementation 'com.github.GTNewHorizons:SC2:master-SNAPSHOT'
+	compile "com.github.GTNewHorizons:SC2:master-SNAPSHOT"
 	
 	compileOnly "openmods:OpenModsLib:1.7.10-0.10:deobf"
 	compileOnly "openblocks:OpenBlocks:1.7.10-1.6-1.7.10:deobf"
@@ -193,7 +196,10 @@ dependencies {
 	//compileOnly "micdoodle8.mods:Galacticraft-Planets:1.7-3.0.12.504:Dev"	
 	
 	compileOnly "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"	
-	compile "com.azanor.baubles:Baubles:1.7.10-1.0.1.10:deobf"	
+	compile "com.azanor.baubles:Baubles:1.7.10-1.0.1.10:deobf"
+
+	runtime("curse.maven:Ztones-224369:2223720")
+	runtime("codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev")
 }
 
 jar {
